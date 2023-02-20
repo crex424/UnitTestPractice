@@ -56,33 +56,44 @@ namespace CPW211_UnitTestStarterCode.Tests
             // "Denominator cannot be zero"
 
             // Arrange
+            // do nothing
 
-            // Act
-
-            // Assert
-            Assert.Fail();
+            // Act => Assert
+            Assert.ThrowsException<ArgumentException>
+                (() => SimpleMath.Divide(1, 0));
         }
 
         // TODO: Test Divide method with two valid numbers
         [TestMethod]
-        public void Divide_TwoValidNumbers_ReturnsDividend()
+        [DataRow(6, 2)]
+        [DataRow(100, 1)]
+        [DataRow(75, 3)]
+        public void Divide_TwoValidNumbers_ReturnsDividend(double num1, double num2)
         {
             // Arrange
-
+            double expectedDividend = num1 / num2;
             // Act
+            double dividend = SimpleMath.Divide(num1, num2);
 
             // Assert
+            Assert.AreEqual(expectedDividend, dividend);
         }
 
         // TODO: Test subtract method with two valid numbers
         [TestMethod]
-        public void Subtract_TwoValidNumbers_ReturnsDifference()
+        [DataRow(6, 2)]
+        [DataRow(2, 2)]
+        [DataRow(8, 2.5)]
+        [DataRow(100, 50)]
+        public void Subtract_TwoValidNumbers_ReturnsDifference(double num1, double num2)
         {
             // Arrange
-
+            double expectedDifference = num1 - num2;
             // Act
+            double difference = SimpleMath.Subtract(num1, num2);
 
             // Assert
+            Assert.AreEqual(expectedDifference, difference);
         }
     }
 }

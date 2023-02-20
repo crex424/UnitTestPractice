@@ -34,6 +34,11 @@ namespace CPW211_UnitTestStarterCode
 
         public static double Divide(double a, double b)
         {
+            if (b <= 0)
+            {
+                throw new ArgumentException($"The {nameof(b)} must be something other than 0 to divide");
+            }
+
             double dividend = a / b;
             return dividend;
         }
