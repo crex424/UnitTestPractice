@@ -38,7 +38,17 @@ namespace CPW211_UnitTestStarterCode.Tests
         }
 
         // TODO: Test Divide method with two valid numbers
+        [TestMethod]
+        public void Divide_TwoValidNumbers_ReturnsDividend()
+        {
+
+        }
 
         // TODO: Test subtract method with two valid numbers
+        [TestMethod]
+        public void Subtract_TwoValidNumbers_ReturnsDifference()
+        {
+
+        }
     }
 }
